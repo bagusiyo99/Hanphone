@@ -11,6 +11,7 @@
                 </div>
                 <div class="blog-detail mb-3">
                     <h4>{{ $item->judul }}</h4>
+                    <h2>{{ $item->harga }}</h2>
                     <p> {!! Str::limit($item->deskripsi, 170) !!}</p>
                     <a href="/oppo/detail/{{ $item->id }}">Detail</a>
                 </div>

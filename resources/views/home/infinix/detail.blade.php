@@ -8,13 +8,13 @@
 </section>
 
 <div class="main">
-    <h3 class="heading">{{ $samsung->judul }}</h3>
+    <h3 class="heading">{{ $infinix->judul }}</h3>
 
     <div class="detail-tentang">
-        <img src="/{{ $samsung->gambar }}" width="500px" height="400px">
+        <img src="/{{ $infinix->gambar }}" width="500px" height="400px">
     </div>
 </div>
 
 <div class="huruf">
-    <p>{{ $samsung->deskripsi }}</p>
+    <p>{{ $infinix->deskripsi }}</p>
 </div>

@@ -40,8 +40,19 @@ Route::get('/vivo', [HomeHandphone::class, 'vivo']);
 Route::get('/vivo/detail/{id}', [HomeHandphone::class, 'detailvivo']);
 Route::get('/xiomi', [HomeHandphone::class, 'xiomi']);
 Route::get('/xiomi/detail/{id}', [HomeHandphone::class, 'detailxiomi']);
+Route::get('/asus', [HomeHandphone::class, 'asus']);
+Route::get('/asus/detail/{id}', [HomeHandphone::class, 'detailasus']);
+Route::get('/infinix', [HomeHandphone::class, 'infinix']);
+Route::get('/infinix/detail/{id}', [HomeHandphone::class, 'detailinfinix']);
 Route::get('/iphone', [HomeHandphone::class, 'iphone']);
 Route::get('/iphone/detail/{id}', [HomeHandphone::class, 'detailiphone']);
+
+
+
+
+
+
+
 
 Route::get('/about', function () {
     $data = [

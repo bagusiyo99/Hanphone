@@ -8,13 +8,13 @@
 </section>
 
 <div class="main">
-    <h3 class="heading">Tentang Sekolah</h3>
+    <h3 class="heading">{{ $xiomi->judul }}</h3>
 
     <div class="detail-tentang">
-        <img src="/img/welcome.jpg" width="500px" height="400px">
+        <img src="/{{ $xiomi->gambar }}" width="500px" height="400px">
     </div>
 </div>
 
 <div class="huruf">
-    <p>{{ $samsung->deskripsi }}</p>
+    <p>{{ $xiomi->deskripsi }}</p>
 </div>

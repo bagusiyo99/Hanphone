@@ -92,6 +92,7 @@
                         <div class="dropdown-menu m-0">
                             <a href="/samsung" class="dropdown-item ">Samsung</a>
                             <a href="/iphone" class="dropdown-item">Iphone</a>
+                            <a href="/asus" class="dropdown-item">Asus</a>
                             <a href="/vivo" class="dropdown-item">Vivo</a>
                             <a href="/oppo" class="dropdown-item">Oppo</a>
                             <a href="/xiomi" class="dropdown-item">Xiomi</a>

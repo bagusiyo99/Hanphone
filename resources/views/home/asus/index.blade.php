@@ -4,7 +4,7 @@
     </section>
 
     <section id="blog">
-        @foreach ($samsung as $item)
+        @foreach ($asus as $item)
             <div class="blog-box mt-5">
                 <div class="blog-img">
                     <img src="/{{ $item->gambar }}">
@@ -12,8 +12,9 @@
                 <div class="blog-detail mb-3">
                     <h4>{{ $item->judul }}</h4>
                     <h2>{{ $item->harga }}</h2>
+
                     <p> {!! Str::limit($item->deskripsi, 170) !!}</p>
-                    <a href="/samsung/detail/{{ $item->id }}">Detail</a>
+                    <a href="/asus/detail/{{ $item->id }}">Detail</a>
                 </div>
             </div>
         @endforeach

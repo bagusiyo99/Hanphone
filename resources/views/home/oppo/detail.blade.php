@@ -8,10 +8,10 @@
 </section>
 
 <div class="main">
-    <h3 class="heading">Tentang Sekolah</h3>
+    <h3 class="heading">{{ $oppo->judul }}</h3>
 
     <div class="detail-tentang">
-        <img src="/img/welcome.jpg" width="500px" height="400px">
+        <img src="/{{ $oppo->gambar }}" width="500px" height="400px">
     </div>
 </div>
 

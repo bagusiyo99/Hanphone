@@ -4,15 +4,16 @@
     </section>
 
     <section id="blog">
-        @foreach ($samsung as $item)
+        @foreach ($xiomi as $item)
             <div class="blog-box mt-5">
                 <div class="blog-img">
                     <img src="/{{ $item->gambar }}">
                 </div>
                 <div class="blog-detail mb-3">
                     <h4>{{ $item->judul }}</h4>
+                    <h2>{{ $item->harga }}</h2>
                     <p> {!! Str::limit($item->deskripsi, 170) !!}</p>
-                    <a href="/samsung/detail/{{ $item->id }}">Detail</a>
+                    <a href="/xiomi/detail/{{ $item->id }}">Detail</a>
                 </div>
             </div>
         @endforeach
