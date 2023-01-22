@@ -5,10 +5,17 @@ use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminBannerController;
 use App\Http\Controllers\AdminMengaturController;
 use App\Http\Controllers\AdminAbout;
+use App\Http\Controllers\AdminAsus;
 use App\Http\Controllers\AdminTentangController;
 use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\AdminInfinix;
 use App\Http\Controllers\AdminInformasiController;
+use App\Http\Controllers\AdminIphone;
 use App\Http\Controllers\AdminKategoriController;
+use App\Http\Controllers\AdminOppo;
+use App\Http\Controllers\AdminSamsung;
+use App\Http\Controllers\AdminVivo;
+use App\Http\Controllers\AdminXiomi;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\HomeInfoController;
 
@@ -88,14 +95,20 @@ Route::prefix('/admin')->group(function (){
     Route::get('/tentang', [AdminTentangController::class, 'index']);
     Route::put('/tentang/update', [AdminTentangController::class, 'update']);
 
-    Route::resource('/blog', AdminBlogController::class);
+    Route::resource('/about', AdminAbout::class);
     Route::resource('/kategori', AdminKategoriController::class);
 
     Route::resource('/user', AdminUserController::class);
-    Route::resource('/banner', AdminBannerController::class);
-    Route::resource('/mengatur', AdminMengaturController::class);
-    Route::resource('/about', AdminAbout::class);
-        Route::resource('/informasi', AdminInformasiController::class);
+    Route::resource('/asus', AdminAsus::class);
+    Route::resource('/samsung', AdminSamsung::class);
+    Route::resource('/vivo', AdminVivo::class);
+    Route::resource('/oppo', AdminOppo::class);
+    Route::resource('/xiomi', AdminXiomi::class);
+    Route::resource('/iphone', AdminIphone::class);
+    Route::resource('/infinix', AdminInfinix::class);
+
+
+
 
 
 

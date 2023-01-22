@@ -2,11 +2,11 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
-                @if (isset($samsung))
-                    <form action="/admin/samsung/{{ $samsung->id }}" method="POST" enctype="multipart/form-data">
+                @if (isset($oppo))
+                    <form action="/admin/oppo/{{ $oppo->id }}" method="POST" enctype="multipart/form-data">
                         @method('PUT')
                     @else
-                        <form action="/admin/samsung" method="POST" enctype="multipart/form-data">
+                        <form action="/admin/oppo" method="POST" enctype="multipart/form-data">
                 @endif
                 @csrf
                 <div class="form-group">
@@ -16,7 +16,7 @@
                         @error('judul')
                             is-invalid
                             @enderror"
-                        placeholder="Judul" value="{{ isset($samsung) ? $samsung->judul : old('judul') }}">
+                        placeholder="Judul" value="{{ isset($oppo) ? $oppo->judul : old('judul') }}">
                     @error('judul')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -32,7 +32,7 @@
                         @error('harga')
                             is-invalid
                             @enderror"
-                        placeholder="Harga" value="{{ isset($samsung) ? $samsung->harga : old('harga') }}">
+                        placeholder="Harga" value="{{ isset($oppo) ? $oppo->harga : old('harga') }}">
                     @error('harga')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -42,7 +42,7 @@
 
                 <div class="form-group">
                     <label for="">Deskripsi</label>
-                    <textarea name="deskripsi"class="form-control" cols="30" rows="10">{{ isset($samsung) ? $samsung->deskripsi : '' }} </textarea>
+                    <textarea name="deskripsi"class="form-control" cols="30" rows="10">{{ isset($oppo) ? $oppo->deskripsi : '' }} </textarea>
                     @error('deskripsi')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -64,8 +64,8 @@
                         </div>
                     @enderror
 
-                    @if (isset($samsung))
-                        <img src="/{{ $samsung->gambar }}" width="100%" class="mt-4" alt="">
+                    @if (isset($oppo))
+                        <img src="/{{ $oppo->gambar }}" width="100%" class="mt-4" alt="">
                     @endif
                 </div>
 

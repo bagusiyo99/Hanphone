@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Oppo;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminOppo extends Controller
 {
@@ -13,7 +15,12 @@ class AdminOppo extends Controller
      */
     public function index()
     {
-        //
+        $data =[
+            'title' => 'Manajemen Oppo',
+            'oppo' => Oppo::get(),
+            'content' => 'admin/oppo/index'
+        ];
+        return view ('admin.layouts.wrapper', $data );
     }
 
     /**
@@ -23,7 +30,12 @@ class AdminOppo extends Controller
      */
     public function create()
     {
-        //
+        $data =[
+            'title' => 'Tambah Oppo',
+            'content' => 'admin/oppo/add'
+        ];
+        
+        return view ('admin.layouts.wrapper', $data );
     }
 
     /**
@@ -34,7 +46,30 @@ class AdminOppo extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request -> validate ([
+            'judul' => 'required',
+            'deskripsi' => 'required ',
+            'gambar' => 'required',
+            'harga' => 'required ',
+
+        ]);
+
+        // upload gambar
+        if ($request -> hasFile('gambar')) {
+            $gambar = $request->file('gambar');
+            $file_name = time ().'-'. $gambar -> getClientOriginalName ();
+
+            $storage = 'uploads/oppo/';
+            $gambar->move ($storage, $file_name);
+            $data ['gambar'] =$storage .$file_name;
+        }else {
+            $data ['gambar'] = null;
+        }
+
+                    Alert::success('sukses', 'data berhasil DITAMBAH');
+                    Oppo::create ($data);
+                    return redirect ('/admin/oppo');
+
     }
 
     /**
@@ -56,7 +91,12 @@ class AdminOppo extends Controller
      */
     public function edit($id)
     {
-        //
+        $data =[
+            'title' => 'Edit Oppo',
+            'oppo' => Oppo::find ($id),
+            'content' => 'admin/oppo/add'
+        ];
+        return view ('admin.layouts.wrapper', $data ); 
     }
 
     /**
@@ -67,8 +107,37 @@ class AdminOppo extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $oppo = Oppo::find($id);
+         $data = $request -> validate ([
+            'judul' => 'required',
+            'deskripsi' => 'required ',
+            'harga' => 'required ',
+
+
+        ]);
+
+        // upload gambar
+        if ($request -> hasFile('gambar')) {
+            if($oppo->gambar  != null){
+                unlink($oppo->gambar);
+            }
+
+
+            $gambar = $request->file('gambar');
+            $file_name = time ().'-'. $gambar -> getClientOriginalName ();
+
+            $storage = 'uploads/oppo/';
+            $gambar->move ($storage, $file_name);
+            $data ['gambar'] =$storage .$file_name;
+        }else {
+            $data ['gambar'] = $oppo ->gambar;
+        }
+
+                    Alert::success('sukses', 'data berhasil diupdate');
+                    $oppo->update($data);
+                    return redirect ('/admin/oppo');
+
     }
 
     /**
@@ -79,6 +148,15 @@ class AdminOppo extends Controller
      */
     public function destroy($id)
     {
-        //
+        $oppo = Oppo::find ($id);
+
+            if($oppo->gambar != null){
+            unlink($oppo->gambar);
+                }
+
+        Alert::success('sukses', 'data berhasil dihapus');
+        $oppo->delete();
+        return redirect ('/admin/oppo');
+        
     }
 }

@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <table class="table">
-                    <a href="/admin/samsung/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah</a>
+                    <a href="/admin/asus/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah</a>
 
                     <tr>
                         <td> No </td>
@@ -14,7 +14,7 @@
                         <td> Action </td>
                     </tr>
 
-                    @foreach ($samsung as $item)
+                    @foreach ($asus as $item)
                         <tr>
                             <td> {{ $loop->iteration }} </td>
                             <td><img src="/{{ $item->gambar }}" width="100px" alt=""> </td>
@@ -25,9 +25,9 @@
 
                             <td>
                                 <div class="d-flex">
-                                    <a href="/admin/samsung/{{ $item->id }}/edit " class="btn btn-success">Edit</a>
+                                    <a href="/admin/asus/{{ $item->id }}/edit " class="btn btn-success">Edit</a>
 
-                                    <form action="/admin/samsung/{{ $item->id }}" method="POST">
+                                    <form action="/admin/asus/{{ $item->id }}" method="POST">
                                         @method ('delete')
                                         @csrf
                                         <button type="submit" class="btn btn-danger mx-2">Hapus</button>

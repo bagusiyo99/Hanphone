@@ -56,21 +56,21 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/admin/blog" class="nav-link">
+                                <a href="/admin/samsung" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Samsung</p>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/admin/informasi" class="nav-link">
+                                <a href="/admin/asus" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Asus </p>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/admin/kategori" class="nav-link">
+                                <a href="/admin/xiomi" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Xiomi </p>
                                 </a>
@@ -78,35 +78,35 @@
 
 
                             <li class="nav-item">
-                                <a href="/admin/kategori" class="nav-link">
+                                <a href="/admin/vivo" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Vivo </p>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/admin/kategori" class="nav-link">
+                                <a href="/admin/oppo" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Oppo </p>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/admin/kategori" class="nav-link">
+                                <a href="/admin/infinix" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Infinix </p>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/admin/kategori" class="nav-link">
+                                <a href="/admin/iphone" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Iphone </p>
                                 </a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="/admin/kategori" class="nav-link">
+                                <a href="/admin/hplain" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Lainnya </p>
                                 </a>

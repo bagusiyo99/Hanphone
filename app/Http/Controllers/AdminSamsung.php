@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Samsung;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminSamsung extends Controller
 {
@@ -13,7 +15,12 @@ class AdminSamsung extends Controller
      */
     public function index()
     {
-        //
+        $data =[
+            'title' => 'Manajemen Samsung',
+            'samsung' => Samsung::limit(1)->get(),
+            'content' => 'admin/samsung/index'
+        ];
+        return view ('admin.layouts.wrapper', $data );
     }
 
     /**
@@ -23,7 +30,12 @@ class AdminSamsung extends Controller
      */
     public function create()
     {
-        //
+        $data =[
+            'title' => 'Tambah Samsung',
+            'content' => 'admin/samsung/add'
+        ];
+        
+        return view ('admin.layouts.wrapper', $data );
     }
 
     /**
@@ -34,7 +46,30 @@ class AdminSamsung extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request -> validate ([
+            'judul' => 'required',
+            'deskripsi' => 'required ',
+            'gambar' => 'required',
+            'harga' => 'required ',
+
+        ]);
+
+        // upload gambar
+        if ($request -> hasFile('gambar')) {
+            $gambar = $request->file('gambar');
+            $file_name = time ().'-'. $gambar -> getClientOriginalName ();
+
+            $storage = 'uploads/samsung/';
+            $gambar->move ($storage, $file_name);
+            $data ['gambar'] =$storage .$file_name;
+        }else {
+            $data ['gambar'] = null;
+        }
+
+                    Alert::success('sukses', 'data berhasil DITAMBAH');
+                    Samsung::create ($data);
+                    return redirect ('/admin/samsung');
+
     }
 
     /**
@@ -56,7 +91,12 @@ class AdminSamsung extends Controller
      */
     public function edit($id)
     {
-        //
+        $data =[
+            'title' => 'Edit Samsung',
+            'samsung' => Samsung::find ($id),
+            'content' => 'admin/samsung/add'
+        ];
+        return view ('admin.layouts.wrapper', $data ); 
     }
 
     /**
@@ -67,8 +107,37 @@ class AdminSamsung extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $samsung = Samsung::find($id);
+         $data = $request -> validate ([
+            'judul' => 'required',
+            'deskripsi' => 'required ',
+            'harga' => 'required ',
+
+
+        ]);
+
+        // upload gambar
+        if ($request -> hasFile('gambar')) {
+            if($samsung->gambar  != null){
+                unlink($samsung->gambar);
+            }
+
+
+            $gambar = $request->file('gambar');
+            $file_name = time ().'-'. $gambar -> getClientOriginalName ();
+
+            $storage = 'uploads/samsung/';
+            $gambar->move ($storage, $file_name);
+            $data ['gambar'] =$storage .$file_name;
+        }else {
+            $data ['gambar'] = $samsung ->gambar;
+        }
+
+                    Alert::success('sukses', 'data berhasil diupdate');
+                    $samsung->update($data);
+                    return redirect ('/admin/samsung');
+
     }
 
     /**
@@ -79,6 +148,15 @@ class AdminSamsung extends Controller
      */
     public function destroy($id)
     {
-        //
+        $samsung = Samsung::find ($id);
+
+            if($samsung->gambar != null){
+            unlink($samsung->gambar);
+                }
+
+        Alert::success('sukses', 'data berhasil dihapus');
+        $samsung->delete();
+        return redirect ('/admin/samsung');
+        
     }
 }
