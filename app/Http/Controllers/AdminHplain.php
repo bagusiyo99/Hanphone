@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\About;
+use App\Models\Hplain;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
-class AdminAbout extends Controller
+class AdminHplain extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,9 @@ class AdminAbout extends Controller
     public function index()
     {
         $data =[
-            'title' => 'Manajemen About',
-            'about' => About::limit(1)->get(),
-            'content' => 'admin/about/index'
+            'title' => 'Manajemen Hplain',
+            'hplain' => Hplain::get(),
+            'content' => 'admin/hplain/index'
         ];
         return view ('admin.layouts.wrapper', $data );
     }
@@ -32,8 +32,8 @@ class AdminAbout extends Controller
     public function create()
     {
         $data =[
-            'title' => 'Tambah About',
-            'content' => 'admin/about/add'
+            'title' => 'Tambah Hplain',
+            'content' => 'admin/hplain/add'
         ];
         
         return view ('admin.layouts.wrapper', $data );
@@ -51,6 +51,8 @@ class AdminAbout extends Controller
             'judul' => 'required',
             'deskripsi' => 'required ',
             'gambar' => 'required',
+            'harga' => 'required ',
+
         ]);
 
         // upload gambar
@@ -58,7 +60,7 @@ class AdminAbout extends Controller
             $gambar = $request->file('gambar');
             $file_name = time ().'-'. $gambar -> getClientOriginalName ();
 
-            $storage = 'uploads/about/';
+            $storage = 'uploads/hplain/';
             $gambar->move ($storage, $file_name);
             $data ['gambar'] =$storage .$file_name;
         }else {
@@ -66,8 +68,8 @@ class AdminAbout extends Controller
         }
 
                     Alert::success('sukses', 'data berhasil DITAMBAH');
-                    About::create ($data);
-                    return redirect ('/admin/about');
+                    Hplain::create ($data);
+                    return redirect ('/admin/hplain');
 
     }
 
@@ -91,9 +93,9 @@ class AdminAbout extends Controller
     public function edit($id)
     {
         $data =[
-            'title' => 'Edit About',
-            'about' => About::find ($id),
-            'content' => 'admin/about/add'
+            'title' => 'Edit Hplain',
+            'hplain' => Hplain::find ($id),
+            'content' => 'admin/hplain/add'
         ];
         return view ('admin.layouts.wrapper', $data ); 
     }
@@ -107,33 +109,35 @@ class AdminAbout extends Controller
      */
     public function update(Request $request, $id)
     {   
-        $about = About::find($id);
+        $hplain = Hplain::find($id);
          $data = $request -> validate ([
             'judul' => 'required',
             'deskripsi' => 'required ',
+            'harga' => 'required ',
+
 
         ]);
 
         // upload gambar
         if ($request -> hasFile('gambar')) {
-            if($about->gambar  != null){
-                unlink($about->gambar);
+            if($hplain->gambar  != null){
+                unlink($hplain->gambar);
             }
 
 
             $gambar = $request->file('gambar');
             $file_name = time ().'-'. $gambar -> getClientOriginalName ();
 
-            $storage = 'uploads/about/';
+            $storage = 'uploads/hplain/';
             $gambar->move ($storage, $file_name);
             $data ['gambar'] =$storage .$file_name;
         }else {
-            $data ['gambar'] = $about ->gambar;
+            $data ['gambar'] = $hplain ->gambar;
         }
 
                     Alert::success('sukses', 'data berhasil diupdate');
-                    $about->update($data);
-                    return redirect ('/admin/about');
+                    $hplain->update($data);
+                    return redirect ('/admin/hplain');
 
     }
 
@@ -145,15 +149,15 @@ class AdminAbout extends Controller
      */
     public function destroy($id)
     {
-        $about = About::find ($id);
+        $hplain = Hplain::find ($id);
 
-            if($about->gambar != null){
-            unlink($about->gambar);
+            if($hplain->gambar != null){
+            unlink($hplain->gambar);
                 }
 
         Alert::success('sukses', 'data berhasil dihapus');
-        $about->delete();
-        return redirect ('/admin/about');
+        $hplain->delete();
+        return redirect ('/admin/hplain');
         
     }
 }

@@ -2,21 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
-use App\Http\Controllers\AdminBannerController;
-use App\Http\Controllers\AdminMengaturController;
 use App\Http\Controllers\AdminAbout;
 use App\Http\Controllers\AdminAsus;
-use App\Http\Controllers\AdminTentangController;
-use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\AdminHplain;
 use App\Http\Controllers\AdminInfinix;
-use App\Http\Controllers\AdminInformasiController;
 use App\Http\Controllers\AdminIphone;
-use App\Http\Controllers\AdminKategoriController;
 use App\Http\Controllers\AdminOppo;
 use App\Http\Controllers\AdminSamsung;
 use App\Http\Controllers\AdminVivo;
 use App\Http\Controllers\AdminXiomi;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\HomeHandphone;
 use App\Http\Controllers\HomeInfoController;
 
 /*
@@ -33,10 +29,19 @@ use App\Http\Controllers\HomeInfoController;
 Route::get('/', [Home::class, 'index']);
 Route::get('/informasi', [HomeInfoController::class, 'index']);
 Route::get('/informasi/detail/{id}', [HomeInfoController::class, 'detail']);
+Route::get('/informasi', [HomeInfoController::class, 'index']);
 
 
-
-
+Route::get('/samsung', [HomeHandphone::class, 'index']);
+Route::get('/samsung/detail/{id}', [HomeHandphone::class, 'detail']);
+Route::get('/oppo', [HomeHandphone::class, 'oppo']);
+Route::get('/oppo/detail/{id}', [HomeHandphone::class, 'detailoppo']);
+Route::get('/vivo', [HomeHandphone::class, 'vivo']);
+Route::get('/vivo/detail/{id}', [HomeHandphone::class, 'detailvivo']);
+Route::get('/xiomi', [HomeHandphone::class, 'xiomi']);
+Route::get('/xiomi/detail/{id}', [HomeHandphone::class, 'detailxiomi']);
+Route::get('/iphone', [HomeHandphone::class, 'iphone']);
+Route::get('/iphone/detail/{id}', [HomeHandphone::class, 'detailiphone']);
 
 Route::get('/about', function () {
     $data = [
@@ -96,7 +101,6 @@ Route::prefix('/admin')->group(function (){
     Route::put('/tentang/update', [AdminTentangController::class, 'update']);
 
     Route::resource('/about', AdminAbout::class);
-    Route::resource('/kategori', AdminKategoriController::class);
 
     Route::resource('/user', AdminUserController::class);
     Route::resource('/asus', AdminAsus::class);
@@ -106,6 +110,8 @@ Route::prefix('/admin')->group(function (){
     Route::resource('/xiomi', AdminXiomi::class);
     Route::resource('/iphone', AdminIphone::class);
     Route::resource('/infinix', AdminInfinix::class);
+    Route::resource('/hplain', AdminHplain::class);
+
 
 
 

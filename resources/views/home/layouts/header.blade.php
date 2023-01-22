@@ -90,13 +90,13 @@
                     <div class="nav-item dropdown ">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Handphone</a>
                         <div class="dropdown-menu m-0">
-                            <a href="/service" class="dropdown-item ">Samsung</a>
-                            <a href="/blog" class="dropdown-item">Iphone</a>
-                            <a href="/informasi" class="dropdown-item">Vivo</a>
-                            <a href="team.html" class="dropdown-item">Oppo</a>
-                            <a href="testimonial.html" class="dropdown-item">Xiomi</a>
-                            <a href="testimonial.html" class="dropdown-item">Infinix</a>
-                            <a href="testimonial.html" class="dropdown-item">Lainnya</a>
+                            <a href="/samsung" class="dropdown-item ">Samsung</a>
+                            <a href="/iphone" class="dropdown-item">Iphone</a>
+                            <a href="/vivo" class="dropdown-item">Vivo</a>
+                            <a href="/oppo" class="dropdown-item">Oppo</a>
+                            <a href="/xiomi" class="dropdown-item">Xiomi</a>
+                            <a href="/infinix" class="dropdown-item">Infinix</a>
+                            <a href="/hplain" class="dropdown-item">Lainnya</a>
                         </div>
                     </div>
 

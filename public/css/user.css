@@ -509,10 +509,20 @@ header nav ul.action-menu .nav-item .nav-link {
         text-align: justify;
     }
 
+
+
+
     .main .heading {
         font-size: 25px;
         margin: 30px;
         position: relative;
+    }
+
+
+    /* blog */
+
+    #blog {
+        padding: 0px;
     }
 
     #blog .blog-box {
@@ -541,7 +551,7 @@ header nav ul.action-menu .nav-item .nav-link {
     }
 
     #blog img {
-        width: 160%;
+        width: 100%;
         height: 400px;
         object-fit: cover;
     }
