@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminHplain;
 use App\Http\Controllers\AdminInfinix;
 use App\Http\Controllers\AdminIphone;
 use App\Http\Controllers\AdminOppo;
+use App\Http\Controllers\AdminPromo;
 use App\Http\Controllers\AdminSamsung;
 use App\Http\Controllers\AdminVivo;
 use App\Http\Controllers\AdminXiomi;
@@ -122,6 +123,8 @@ Route::prefix('/admin')->group(function (){
     Route::resource('/iphone', AdminIphone::class);
     Route::resource('/infinix', AdminInfinix::class);
     Route::resource('/hplain', AdminHplain::class);
+    Route::resource('/promo', AdminPromo::class);
+
 
 
 

@@ -77,13 +77,17 @@
 
 
 
-<div class="container mt-5">
+{{-- <div class="container mt-5">
     <div class="text-center">
         <h4> Blog </h4>
     </div>
+</div> --}}
+
+<div class="main">
+    <h3 class="heading">Informasi</h3>
 </div>
-<div class="atur my-5">
-    @foreach ($about as $item)
+<div class="atur ">
+    @foreach ($promo as $item)
         <div class="card-jurusan">
             <div class="card-image">
                 <a href="#">
@@ -92,19 +96,17 @@
             </div>
             <div class="card-description">
                 <h3>{{ $item->judul }}</h3>
-                <p>{{ $item->deskripsi }}</p>
+                <p>{!! Str::limit($item->deskripsi, 70) !!}</p>
                 <a href="#">Detail</a>
             </div>
         </div>
     @endforeach
-
-
 </div>
 <nav aria-label="Page navigation example">
-
     <div class="d-flex justify-content-center mt-3">
-        {{-- {{ $about->links() }} --}}
+        {{ $promo->links() }}
     </div>
+
 
 </nav>
 
@@ -128,19 +130,22 @@
     </section>
  --}}
 
-<section id="blog">
-    <div class="main">
-        <h3 class="heading">Informasi</h3>
 
+
+<div class="main">
+    <h3 class="heading">Informasi</h3>
+</div>
+<section class="blog">
+    @foreach ($about as $item)
         <div class="blog-box">
             <div class="blog-img">
                 <img src="/{{ $item->gambar }}">
             </div>
-            <div class="blog-detail">
-                <h4>{{ $item->judul }}</h4>
-                <p>{{ $item->deskripsi }}</p>
-                <a href="/about">Detail</a>
+            <div class="blog-detail mb-3">
+                <h3>{{ $item->judul }}</h3>
+                <p> {!! Str::limit($item->deskripsi, 170) !!}</p>
+                <a href="/xiomi/detail/{{ $item->id }}">Detail</a>
             </div>
         </div>
-    </div>
+    @endforeach
 </section>

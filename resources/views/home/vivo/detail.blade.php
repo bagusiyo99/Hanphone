@@ -9,6 +9,8 @@
 
 <div class="main">
     <h3 class="heading">{{ $vivo->judul }}</h3>
+    <p>{{ $vivo->created_at }}</p>
+
 
     <div class="detail-tentang">
         <img src="/{{ $vivo->gambar }}" width="500px" height="400px">

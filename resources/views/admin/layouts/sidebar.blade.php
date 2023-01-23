@@ -45,102 +45,56 @@
                         </ul>
                     </nav>
 
-
-                    <li class="nav-item">
-                        <a href="/admin/blog" class="nav-link  {{ Request::is('admin/blog*') ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-file"></i>
-                            <p>
-                                Handphone
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                            data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
                             <li class="nav-item">
-                                <a href="/admin/samsung" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Samsung</p>
+                                <a href="/admin/promo"
+                                    class="nav-link  {{ Request::is('admin/promo*') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-calendar"></i>
+                                    <p>
+                                        Promo
+                                        {{-- <span class="right badge badge-danger">New</span> --}}
+                                    </p>
                                 </a>
                             </li>
-
-                            <li class="nav-item">
-                                <a href="/admin/asus" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Asus </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="/admin/xiomi" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Xiomi </p>
-                                </a>
-                            </li>
+                        </ul>
+                    </nav>
 
 
-                            <li class="nav-item">
-                                <a href="/admin/vivo" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Vivo </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="/admin/oppo" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Oppo </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="/admin/infinix" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Infinix </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="/admin/iphone" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Iphone </p>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a href="/admin/hplain" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Lainnya </p>
-                                </a>
-                            </li>
-
-
-
-
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                            data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
                             <li class="nav-item">
                                 <a href="/admin/blog"
                                     class="nav-link  {{ Request::is('admin/blog*') ? 'active' : '' }}">
                                     <i class="nav-icon fas fa-file"></i>
                                     <p>
-                                        Aksesoris
+                                        Handphone
                                         <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="/admin/blog" class="nav-link">
+                                        <a href="/admin/samsung" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Samsung</p>
                                         </a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="/admin/informasi" class="nav-link">
+                                        <a href="/admin/asus" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Asus </p>
                                         </a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="/admin/kategori" class="nav-link">
+                                        <a href="/admin/xiomi" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Xiomi </p>
                                         </a>
@@ -148,39 +102,100 @@
 
 
                                     <li class="nav-item">
-                                        <a href="/admin/kategori" class="nav-link">
+                                        <a href="/admin/vivo" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Vivo </p>
                                         </a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="/admin/kategori" class="nav-link">
+                                        <a href="/admin/oppo" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Oppo </p>
                                         </a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="/admin/kategori" class="nav-link">
+                                        <a href="/admin/infinix" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Infinix </p>
                                         </a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="/admin/kategori" class="nav-link">
+                                        <a href="/admin/iphone" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Iphone </p>
                                         </a>
                                     </li>
 
                                     <li class="nav-item">
-                                        <a href="/admin/kategori" class="nav-link">
+                                        <a href="/admin/hplain" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Lainnya </p>
                                         </a>
                                     </li>
+                                </ul>
+                            </li>
+                    </nav>
+
+
+                    <li class="nav-item">
+                        <a href="/admin/blog" class="nav-link  {{ Request::is('admin/blog*') ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-file"></i>
+                            <p>
+                                Accessories
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/admin/samsung" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Charger</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/admin/asus" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Casing </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/admin/xiomi" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Power Bank </p>
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a href="/admin/vivo" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Usb </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="/admin/oppo" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Lainnya </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+
+
+
+
+
+
+
+
 
         </div>
         <!-- /.sidebar -->
