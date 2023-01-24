@@ -9,6 +9,7 @@
 
 <div class="main">
     <h3 class="heading">{{ $samsung->judul }}</h3>
+    <p>{{ $samsung->created_at }}</p>
 
     <div class="detail-tentang">
         <img src="/{{ $samsung->gambar }}" width="500px" height="400px">

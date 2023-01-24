@@ -135,12 +135,12 @@
                 <div
                     class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary">World</strong>
+                        <strong class="d-inline-block mb-2 text-success">World</strong>
                         <h3 class="mb-3">Featured post</h3>
                         <p class="card-text mb-4">This is a wider card with supporting text below as a natural
                             lead-in to
                             additional content.</p>
-                        <a href="#" class="stretched-link">Continue reading</a>
+                        <a href="#" class="stretched-link text-success">Continue reading</a>
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <img class="bd-placeholder-img" width="200" height="250" src="/{{ $item->gambar }}">

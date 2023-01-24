@@ -9,6 +9,7 @@
 
 <div class="main">
     <h3 class="heading">{{ $infinix->judul }}</h3>
+    <p>{{ $infinix->created_at }}</p>
 
     <div class="detail-tentang">
         <img src="/{{ $infinix->gambar }}" width="500px" height="400px">

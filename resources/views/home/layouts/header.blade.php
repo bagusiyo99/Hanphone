@@ -36,42 +36,42 @@
     </nav>
     
 </header> --}}
+<section id="topbar "
+    class="mb-2 mb-lg-0 mb-sm-0 d-none d-lg-flex align-items-center pt-2 pb-2 bg-success text-white topbar-transparent">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6   judul">
+                <span class="px-3">Bagus Cell |</span>
+                <span class="px-1">08943943xx </span>
+
+
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="" class="me-3 icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="" class="me-3 icon">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="" class="me-3 icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="" class="me-3 icon">
+                    <i class="fa-brands fa-facebook"></i> </a>
+
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <header>
-    <section id="topbar"
-        class="mb-2 mb-lg-0 mb-sm-0 d-none d-lg-flex align-items-center pt-2 pb-2 bg-success text-white topbar-transparent">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6   judul">
-                    <span class="px-3">Bagus Iyo |</span>
-                    <span class="px-1">08943943xx </span>
 
 
-                </div>
-                <div class="col-md-6 text-end">
-                    <a href="" class="me-3 icon">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="" class="me-3 icon">
-                        <i class="fa-brands fa-twitter"></i>
-                    </a>
-                    <a href="" class="me-3 icon">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="" class="me-3 icon">
-                        <i class="fa-brands fa-facebook"></i> </a>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed">
         <div class="container">
             <a class=" navbar-brand d-flex d-lg-none" href="index.html">
-                <h2 class="fw-bold  mb-2 mb-lg-0 mb-sm-0">School</h2>
+                <h2 class="fw-bold  mb-2 mb-lg-0 mb-sm-0">Bagus cell</h2>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

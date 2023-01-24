@@ -4,10 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminAbout;
 use App\Http\Controllers\AdminAsus;
+use App\Http\Controllers\AdminBanner;
 use App\Http\Controllers\AdminCasing;
 use App\Http\Controllers\AdminCharger;
 use App\Http\Controllers\AdminHplain;
 use App\Http\Controllers\AdminInfinix;
+use App\Http\Controllers\AdminInformasi;
 use App\Http\Controllers\AdminIphone;
 use App\Http\Controllers\AdminLainaksesoris;
 use App\Http\Controllers\AdminOppo;
@@ -147,6 +149,8 @@ Route::prefix('/admin')->group(function (){
     Route::resource('/pb', AdminPb::class);
     Route::resource('/usb', AdminUsb::class);
     Route::resource('/lainaksesoris', AdminLainaksesoris::class);
+    Route::resource('/banner', AdminBanner::class);
+    Route::resource('/informasi', AdminInformasi::class);
 
 
 

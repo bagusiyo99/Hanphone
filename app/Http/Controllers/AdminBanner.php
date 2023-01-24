@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Samsung;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class AdminSamsung extends Controller
+class AdminBanner extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class AdminSamsung extends Controller
     public function index()
     {
         $data =[
-            'title' => 'Manajemen Samsung',
-            'samsung' => Samsung::get(),
-            'content' => 'admin/samsung/index'
+            'title' => 'Manajemen Banner',
+            'banner' => Banner::get(),
+            'content' => 'admin/banner/index'
         ];
         return view ('admin.layouts.wrapper', $data );
     }
@@ -31,8 +31,8 @@ class AdminSamsung extends Controller
     public function create()
     {
         $data =[
-            'title' => 'Tambah Samsung',
-            'content' => 'admin/samsung/add'
+            'title' => 'Tambah Banner',
+            'content' => 'admin/banner/add'
         ];
         
         return view ('admin.layouts.wrapper', $data );
@@ -50,8 +50,6 @@ class AdminSamsung extends Controller
             'judul' => 'required',
             'deskripsi' => 'required ',
             'gambar' => 'required',
-            'harga' => 'required ',
-
         ]);
 
         // upload gambar
@@ -59,7 +57,7 @@ class AdminSamsung extends Controller
             $gambar = $request->file('gambar');
             $file_name = time ().'-'. $gambar -> getClientOriginalName ();
 
-            $storage = 'uploads/samsung/';
+            $storage = 'uploads/banner/';
             $gambar->move ($storage, $file_name);
             $data ['gambar'] =$storage .$file_name;
         }else {
@@ -67,8 +65,8 @@ class AdminSamsung extends Controller
         }
 
                     Alert::success('sukses', 'data berhasil DITAMBAH');
-                    Samsung::create ($data);
-                    return redirect ('/admin/samsung');
+                    Banner::create ($data);
+                    return redirect ('/admin/banner');
 
     }
 
@@ -92,9 +90,9 @@ class AdminSamsung extends Controller
     public function edit($id)
     {
         $data =[
-            'title' => 'Edit Samsung',
-            'samsung' => Samsung::find ($id),
-            'content' => 'admin/samsung/add'
+            'title' => 'Edit Banner',
+            'banner' => Banner::find ($id),
+            'content' => 'admin/banner/add'
         ];
         return view ('admin.layouts.wrapper', $data ); 
     }
@@ -108,35 +106,33 @@ class AdminSamsung extends Controller
      */
     public function update(Request $request, $id)
     {   
-        $samsung = Samsung::find($id);
+        $banner = Banner::find($id);
          $data = $request -> validate ([
             'judul' => 'required',
             'deskripsi' => 'required ',
-            'harga' => 'required ',
-
 
         ]);
 
         // upload gambar
         if ($request -> hasFile('gambar')) {
-            if($samsung->gambar  != null){
-                unlink($samsung->gambar);
+            if($banner->gambar  != null){
+                unlink($banner->gambar);
             }
 
 
             $gambar = $request->file('gambar');
             $file_name = time ().'-'. $gambar -> getClientOriginalName ();
 
-            $storage = 'uploads/samsung/';
+            $storage = 'uploads/banner/';
             $gambar->move ($storage, $file_name);
             $data ['gambar'] =$storage .$file_name;
         }else {
-            $data ['gambar'] = $samsung ->gambar;
+            $data ['gambar'] = $banner ->gambar;
         }
 
                     Alert::success('sukses', 'data berhasil diupdate');
-                    $samsung->update($data);
-                    return redirect ('/admin/samsung');
+                    $banner->update($data);
+                    return redirect ('/admin/banner');
 
     }
 
@@ -148,15 +144,15 @@ class AdminSamsung extends Controller
      */
     public function destroy($id)
     {
-        $samsung = Samsung::find ($id);
+        $banner = Banner::find ($id);
 
-            if($samsung->gambar != null){
-            unlink($samsung->gambar);
+            if($banner->gambar != null){
+            unlink($banner->gambar);
                 }
 
         Alert::success('sukses', 'data berhasil dihapus');
-        $samsung->delete();
-        return redirect ('/admin/samsung');
+        $banner->delete();
+        return redirect ('/admin/banner');
         
     }
 }

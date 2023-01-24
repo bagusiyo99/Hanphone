@@ -9,6 +9,7 @@
 
 <div class="main">
     <h3 class="heading">{{ $oppo->judul }}</h3>
+    <p>{{ $oppo->created_at }}</p>
 
     <div class="detail-tentang">
         <img src="/{{ $oppo->gambar }}" width="500px" height="400px">
