@@ -34,6 +34,8 @@ use App\Http\Controllers\HomeInfoController;
 */
 
 Route::get('/', [Home::class, 'index']);
+Route::get('/detail/{id}', [Home::class, 'detail']);
+
 Route::get('/informasi', [HomeInfoController::class, 'index']);
 Route::get('/informasi/detail/{id}', [HomeInfoController::class, 'detail']);
 Route::get('/informasi', [HomeInfoController::class, 'index']);

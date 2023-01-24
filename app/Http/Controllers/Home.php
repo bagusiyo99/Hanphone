@@ -19,4 +19,13 @@ class Home extends Controller
     ];
     return view('home.layouts.wrapper',$data);
     }
+
+           public function detail($id)
+    {
+    $data = [
+        'promo' => Promo::find($id),
+        'content'=> 'home/home/detail'
+    ];
+    return view('home.layouts.wrapper',$data);
+    }
 }

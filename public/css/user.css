@@ -3,13 +3,34 @@
     color: #fff;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* pagination */
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    color: #198754;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
 
 /*****************************
     NavBar
 ******************************/
 header nav {
     background: #fff;
-    box-shadow: 0px 0px 5px #4444;
+    box-shadow: 0px 0px 15px #4444;
 }
 
 header nav a.navbar-brand h2 {

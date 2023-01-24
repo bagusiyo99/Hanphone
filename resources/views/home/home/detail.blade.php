@@ -8,15 +8,15 @@
 </section>
 
 <div class="main">
-    <h3 class="heading">{{ $usb->judul }}</h3>
-    <p>{{ $usb->created_at }}</p>
+    <h3 class="heading">{{ $promo->judul }}</h3>
+    <p>{{ $promo->created_at }}</p>
 
 
     <div class="detail-tentang">
-        <img src="/{{ $usb->gambar }}" width="500px" height="400px">
+        <img src="/{{ $promo->gambar }}" width="500px" height="400px">
     </div>
 </div>
 
 <div class="huruf">
-    <p>{{ $usb->deskripsi }}</p>
+    <p>{{ $promo->deskripsi }}</p>
 </div>

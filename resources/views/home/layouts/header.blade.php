@@ -68,7 +68,7 @@
     </section>
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
             <a class=" navbar-brand d-flex d-lg-none" href="index.html">
                 <h2 class="fw-bold  mb-2 mb-lg-0 mb-sm-0">School</h2>
