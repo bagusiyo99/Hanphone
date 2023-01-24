@@ -104,11 +104,11 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Accessories</a>
                         <div class="dropdown-menu m-0">
-                            <a href="blog.html" class="dropdown-item">Charger</a>
-                            <a href="detail.html" class="dropdown-item">Casing </a>
-                            <a href="feature.html" class="dropdown-item">Power bank</a>
-                            <a href="team.html" class="dropdown-item">Usb </a>
-                            <a href="testimonial.html" class="dropdown-item">Lainnya</a>
+                            <a href="/charger" class="dropdown-item">Charger</a>
+                            <a href="/casing" class="dropdown-item">Casing </a>
+                            <a href="/pb" class="dropdown-item">Power bank</a>
+                            <a href="/usb" class="dropdown-item">Usb </a>
+                            <a href="/lainaksesoris" class="dropdown-item">Lainnya</a>
                         </div>
                     </div>
 

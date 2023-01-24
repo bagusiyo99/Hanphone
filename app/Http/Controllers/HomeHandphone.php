@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asus;
+use App\Models\Hplain;
 use App\Models\Infinix;
 use App\Models\Iphone;
 use App\Models\Oppo;
@@ -138,6 +139,25 @@ class HomeHandphone extends Controller
     $data = [
         'vivo' => Vivo::find($id),
         'content'=> 'home/vivo/detail'
+    ];
+    return view('home.layouts.wrapper',$data);
+    }
+
+    
+    // hplain
+          function hplain (){
+    $data = [
+        'hplain' => Hplain::get(),
+        'content'=> 'home/hplain/index'
+    ];
+    return view('home.layouts.wrapper',$data);
+    }
+
+        public function detailhplain ($id)
+    {
+    $data = [
+        'hplain' => Hplain::find($id),
+        'content'=> 'home/hplain/detail'
     ];
     return view('home.layouts.wrapper',$data);
     }
