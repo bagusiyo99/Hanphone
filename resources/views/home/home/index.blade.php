@@ -1,40 +1,35 @@
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
+    <div class="carousel-indicators ">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
             aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
             aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
             aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+            aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+            aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="/img/m.jpg" class="img-carousel" alt="">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
+        @foreach ($banner as $key => $item)
+            <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+                <img src="/{{ $item->gambar }}" class="img-carousel" alt="">
+                <div class="carousel-caption d-none d-md-block text-success">
+                    <h5>{{ $item->judul }}</h5>
+                    <p>{{ $item->deskripsi }}</p>
+                </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <img src="/img/m.jpg" class="img-carousel" alt="">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="/img/m.jpg" class="img-carousel" alt="">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-            </div>
-        </div>
+        @endforeach
+
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <button class="carousel-control-prev text-success" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <button class="carousel-control-next text-success" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
@@ -52,8 +47,7 @@
             <div class="tulis">
                 <h4>{{ $item->judul }}</h4>
                 <h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
-                <p>{{ $item->deskripsi }}
-                </p>
+                <p>{{ $item->deskripsi }} </p>
 
             </div>
     </div>
@@ -106,8 +100,6 @@
     <div class="d-flex justify-content-center mt-3">
         {{ $promo->links() }}
     </div>
-
-
 </nav>
 
 
@@ -120,27 +112,24 @@
 </div>
 <main class="container">
 
-    <div class="p-4 p-md-5 mb-4 text-white rounded bg-success">
-        <div class="col-md-6 px-0">
-            <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
-            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
-                efficiently about what’s most interesting in this post’s contents.</p>
-            <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+    <div class="p-3 p-md-4 mb-5 text-white rounded bg-success">
+        <div class="col-md-7 px-0">
+            <h1 class="display-4 fst-italic">Beli Barang Elektronik Murah, Bagus Cell Solusinya!</h1>
+            <p class="lead my-3">Dapatkan Update Informasi Terbaru hanya di website Bagus Cell </p>
+            {{-- <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p> --}}
         </div>
     </div>
 
     <div class="row mb-2">
-        @foreach ($promo as $item)
+        @foreach ($informasi as $item)
             <div class="col-md-6">
                 <div
                     class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-success">World</strong>
-                        <h3 class="mb-3">Featured post</h3>
-                        <p class="card-text mb-4">This is a wider card with supporting text below as a natural
-                            lead-in to
-                            additional content.</p>
-                        <a href="#" class="stretched-link text-success">Continue reading</a>
+                    <div class="col p-4 d-flex flex-column position-static masee">
+                        <strong class="d-inline-block mb-2 text-success">Informasi Terbaru</strong>
+                        <h3 class="mb-3">{{ $item->judul }}</h3>
+                        <p class="card-text mb-4">{!! Str::limit($item->deskripsi, 200) !!}</p>
+                        <a clas="info" href="/informasi/{{ $item->id }}">Lanjutkan Membaca</a>
                     </div>
                     <div class="col-auto d-none d-lg-block">
                         <img class="bd-placeholder-img" width="200" height="250" src="/{{ $item->gambar }}">
