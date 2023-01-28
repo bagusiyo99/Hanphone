@@ -96,6 +96,12 @@ header nav ul.action-menu .nav-item .nav-link {
     max-width: 100%;
     height: auto;
     padding: 0 10px;
+    border-radius: 0px 0px 159px 0px;
+    -webkit-border-radius: 0px 0px 159px 0px;
+    -moz-border-radius: 0px 0px 159px 0px;
+    -ms-border-radius: 0px 0px 159px 0px;
+    -o-border-radius: 0px 0px 159px 0px;
+
 }
 
 .tulis {
@@ -185,8 +191,9 @@ header nav ul.action-menu .nav-item .nav-link {
 
 .card-description p {
     color: #243763;
-    font-size: 14px;
+    font-size: 15px;
     margin-bottom: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card-description a {
@@ -306,19 +313,13 @@ header nav ul.action-menu .nav-item .nav-link {
 
 /* detail user */
 .huruf {
-    font-size: 50px;
-
+    font-size: 17px;
     padding: 0px 100px;
     text-align: justify;
 }
 
 
-.huruf p {
-    font-size: 17px;
-    text-align: center;
 
-
-}
 
 /* blog informasi hp index*/
 .blog {

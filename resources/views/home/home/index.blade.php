@@ -35,10 +35,13 @@
     </button>
 </div>
 
-<div class="container my-5">
+{{-- <div class="container my-5">
     <div class="text-center">
         <h4> About </h4>
     </div>
+</div> --}}
+<div class="main">
+    <h3 class="heading">About</h3>
 </div>
 <section class="info mb-5">
     <div class="main-info">
@@ -46,7 +49,7 @@
             <img src="/{{ $item->gambar }}">
             <div class="tulis">
                 <h4>{{ $item->judul }}</h4>
-                <h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
+                {{-- <h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1> --}}
                 <p>{{ $item->deskripsi }} </p>
 
             </div>
@@ -114,8 +117,8 @@
 
     <div class="p-3 p-md-4 mb-5 text-white rounded bg-success">
         <div class="col-md-7 px-0">
-            <h1 class="display-4 fst-italic">Beli Barang Elektronik Murah, Bagus Cell Solusinya!</h1>
-            <p class="lead my-3">Dapatkan Update Informasi Terbaru hanya di website Bagus Cell </p>
+            <h1 class="display-4 fst-italic">Beli Barang Elektronik Murah, (nama toko ) Solusinya!</h1>
+            <p class="lead my-3">Dapatkan Update Informasi Terbaru hanya di website (nama toko ) </p>
             {{-- <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p> --}}
         </div>
     </div>

@@ -18,5 +18,5 @@
 </div>
 
 <div class="huruf">
-    <p>{{ $vivo->deskripsi }}</p>
+    <p>{!! $vivo->deskripsi !!}</p>
 </div>

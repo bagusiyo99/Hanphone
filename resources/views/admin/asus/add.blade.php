@@ -42,7 +42,7 @@
 
                 <div class="form-group">
                     <label for="">Deskripsi</label>
-                    <textarea name="deskripsi"class="form-control" cols="30" rows="10">{{ isset($asus) ? $asus->deskripsi : '' }} </textarea>
+                    <textarea id="summernote" name="deskripsi"class="form-control" cols="30" rows="10">{{ isset($asus) ? $asus->deskripsi : '' }} </textarea>
                     @error('deskripsi')
                         <div class="invalid-feedback">
                             {{ $message }}

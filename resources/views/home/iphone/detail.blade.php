@@ -17,5 +17,5 @@
 </div>
 
 <div class="huruf">
-    <p>{{ $iphone->deskripsi }}</p>
+    <p>{!! $iphone->deskripsi !!}</p>
 </div>
