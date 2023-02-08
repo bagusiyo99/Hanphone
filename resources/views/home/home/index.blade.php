@@ -43,7 +43,7 @@
 <div class="main">
     <h3 class="heading">About</h3>
 </div>
-<section class="info mb-5">
+<section class="info mb-2">
     <div class="main-info">
         @foreach ($about as $item)
             <img src="/{{ $item->gambar }}">

@@ -2,7 +2,7 @@
 
 
     <h2>Selamat Datang</h2>
-    <p> Sejarah SMKN Bagus Bandar Lampung</p>
+    <p> Buruan Beli Sebelum Kehabisan Stok</p>
 
 
 </section>

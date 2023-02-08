@@ -569,7 +569,7 @@ header nav ul.action-menu .nav-item .nav-link {
     }
 
     .huruf {
-        font-size: 50px;
+        font-size: 15px;
         padding: 0px 20px;
         text-align: justify;
     }
@@ -619,4 +619,26 @@ header nav ul.action-menu .nav-item .nav-link {
         object-fit: cover;
     }
 
+    .main-info {
+        padding: 0px;
+    }
+
+    .info {
+        padding: 0px;
+    }
+
+    .info .main-info img {
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        -ms-border-radius: 0px;
+        -o-border-radius: 0px;
+    }
+
+    .main-info p {
+        text-align: justify;
+
+    }
+
+    .info .main-info p {}
 }
