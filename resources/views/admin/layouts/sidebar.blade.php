@@ -44,6 +44,25 @@
                         </ul>
                     </nav>
 
+
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                            data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+                            <li class="nav-item">
+                                <a href="/admin/pesan"
+                                    class="nav-link  {{ Request::is('admin/pesan*') ? 'active' : '' }}">
+                                    <i class="nav-icon fas fa-inbox"></i>
+                                    <p>
+                                        Pesan
+                                        {{-- <span class="right badge badge-danger">New</span> --}}
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
                     <nav class="mt-2">
                         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                             data-accordion="false">

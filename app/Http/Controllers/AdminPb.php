@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pb;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -14,7 +15,12 @@ class AdminPb extends Controller
      */
     public function index()
     {
-        //
+        $data =[
+            'title' => 'Manajemen Pb',
+            'pb' => Pb::get(),
+            'content' => 'admin/pb/index'
+        ];
+        return view ('admin.layouts.wrapper', $data );
     }
 
     /**
@@ -24,7 +30,12 @@ class AdminPb extends Controller
      */
     public function create()
     {
-        //
+        $data =[
+            'title' => 'Tambah Pb',
+            'content' => 'admin/pb/add'
+        ];
+        
+        return view ('admin.layouts.wrapper', $data );
     }
 
     /**
@@ -35,7 +46,30 @@ class AdminPb extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request -> validate ([
+            'judul' => 'required',
+            'deskripsi' => 'required ',
+            'gambar' => 'required',
+            'harga' => 'required ',
+
+        ]);
+
+        // upload gambar
+        if ($request -> hasFile('gambar')) {
+            $gambar = $request->file('gambar');
+            $file_name = time ().'-'. $gambar -> getClientOriginalName ();
+
+            $storage = 'uploads/pb/';
+            $gambar->move ($storage, $file_name);
+            $data ['gambar'] =$storage .$file_name;
+        }else {
+            $data ['gambar'] = null;
+        }
+
+                    Alert::success('sukses', 'data berhasil DITAMBAH');
+                    Pb::create ($data);
+                    return redirect ('/admin/pb');
+
     }
 
     /**
@@ -57,7 +91,12 @@ class AdminPb extends Controller
      */
     public function edit($id)
     {
-        //
+        $data =[
+            'title' => 'Edit Pb',
+            'pb' => Pb::find ($id),
+            'content' => 'admin/pb/add'
+        ];
+        return view ('admin.layouts.wrapper', $data ); 
     }
 
     /**
@@ -68,8 +107,37 @@ class AdminPb extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $pb = Pb::find($id);
+         $data = $request -> validate ([
+            'judul' => 'required',
+            'deskripsi' => 'required ',
+            'harga' => 'required ',
+
+
+        ]);
+
+        // upload gambar
+        if ($request -> hasFile('gambar')) {
+            if($pb->gambar  != null){
+                unlink($pb->gambar);
+            }
+
+
+            $gambar = $request->file('gambar');
+            $file_name = time ().'-'. $gambar -> getClientOriginalName ();
+
+            $storage = 'uploads/pb/';
+            $gambar->move ($storage, $file_name);
+            $data ['gambar'] =$storage .$file_name;
+        }else {
+            $data ['gambar'] = $pb ->gambar;
+        }
+
+                    Alert::success('sukses', 'data berhasil diupdate');
+                    $pb->update($data);
+                    return redirect ('/admin/pb');
+
     }
 
     /**
@@ -80,6 +148,15 @@ class AdminPb extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pb = Pb::find ($id);
+
+            if($pb->gambar != null){
+            unlink($pb->gambar);
+                }
+
+        Alert::success('sukses', 'data berhasil dihapus');
+        $pb->delete();
+        return redirect ('/admin/pb');
+        
     }
 }

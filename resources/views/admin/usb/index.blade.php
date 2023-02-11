@@ -2,10 +2,10 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <table class="table">
+                <table class="table table-bordered text-center">
                     <a href="/admin/usb/create" class="btn btn-primary mb-3"><i class="fas fa-plus"></i> Tambah</a>
 
-                    <tr>
+                    <tr class="btn-secondary">
                         <td> No </td>
                         <td> Gambar </td>
                         <td> Judul</td>
@@ -24,7 +24,7 @@
                             {{-- <td> {{ $item->desc }} </td> --}}
 
                             <td>
-                                <div class="d-flex">
+                                <div class="text-center mb-1">
                                     <a href="/admin/usb/{{ $item->id }}/edit " class="btn btn-success">Edit</a>
 
                                     <form action="/admin/usb/{{ $item->id }}" method="POST">

@@ -14,6 +14,7 @@ use App\Http\Controllers\AdminIphone;
 use App\Http\Controllers\AdminLainaksesoris;
 use App\Http\Controllers\AdminOppo;
 use App\Http\Controllers\AdminPb;
+use App\Http\Controllers\AdminPesan;
 use App\Http\Controllers\AdminPromo;
 use App\Http\Controllers\AdminSamsung;
 use App\Http\Controllers\AdminUsb;
@@ -21,6 +22,7 @@ use App\Http\Controllers\AdminVivo;
 use App\Http\Controllers\AdminXiomi;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\HomeAksesoris;
+use App\Http\Controllers\HomeContact;
 use App\Http\Controllers\HomeHandphone;
 use App\Http\Controllers\HomeInfoController;
 
@@ -75,6 +77,8 @@ Route::get('/lainaksesoris', [HomeAksesoris::class, 'lainaksesoris']);
 Route::get('/lainaksesoris/detail/{id}', [HomeAksesoris::class, 'detaillainaksesoris']);
 
 
+Route::get('/contact', [HomeContact::class, 'index']);
+Route::post('/contact/send', [HomeContact::class, 'send']);
 
 
 Route::get('/about', function () {
@@ -85,30 +89,6 @@ Route::get('/about', function () {
 });
 
 
-Route::get('/service', function () {
-    $data = [
-        'content'=> 'home/service/index'
-    ];
-    return view('home.layouts.wrapper',$data);
-});
-
-
-
-Route::get('/blog', function () {
-    $data = [
-        'content'=> 'home/blog/index'
-    ];
-    return view('home.layouts.wrapper',$data);
-});
-
-
-
-Route::get('/contact', function () {
-    $data = [
-        'content'=> 'home/contact/index'
-    ];
-    return view('home.layouts.wrapper',$data);
-});
 
 
 
@@ -131,10 +111,13 @@ Route::prefix('/admin')->group(function (){
     });
 
     
-    Route::get('/tentang', [AdminTentangController::class, 'index']);
-    Route::put('/tentang/update', [AdminTentangController::class, 'update']);
+    // Route::get('/pesan', [AdminPesan::class, 'index']);
+    // Route::put('/pesan/detail', [AdminPesan::class, 'detail']);
 
     Route::resource('/about', AdminAbout::class);
+    Route::resource('/pesan', AdminPesan::class);
+    // Route::resource('/pesan/detail', [AdminPesan::class, 'detail']);
+
 
     Route::resource('/user', AdminUserController::class);
     Route::resource('/asus', AdminAsus::class);
