@@ -4,9 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminAbout;
 use App\Http\Controllers\AdminAsus;
+use App\Http\Controllers\AdminAuth;
 use App\Http\Controllers\AdminBanner;
 use App\Http\Controllers\AdminCasing;
 use App\Http\Controllers\AdminCharger;
+use App\Http\Controllers\AdminDasboard;
 use App\Http\Controllers\AdminHplain;
 use App\Http\Controllers\AdminInfinix;
 use App\Http\Controllers\AdminInformasi;
@@ -89,26 +91,28 @@ Route::get('/about', function () {
 });
 
 
+Route::get('/login', [AdminAuth::class, 'index'])->name('login');
+Route::post('/login/do', [AdminAuth::class, 'doLogin']);
+
+Route::get('/logout', [AdminAuth::class, 'logout']);
 
 
 
-Route::get('/login', function () {
-    $data = [
-        'content'=> 'home/auth/index'
-    ];
-    return view('home.layouts.wrapper',$data);
-});
+
 
 // Admin
-Route::prefix('/admin')->group(function (){
-    Route::get('/dasboard', function () {
-        $data = [
-        'title' => 'dasboard',
-        'content'=> 'admin/dasboard/index'
-    ];
+Route::prefix('/admin')->middleware('auth')->group(function (){
+        Route::get('/dasboard', [AdminDasboard::class, 'index']);
 
-        return view ('admin.layouts.wrapper', $data);
-    });
+
+    //  Route::get('/dasboard', function () {
+    //     $data = [
+    //     'title' => 'dasboard',
+    //     'content'=> 'admin/dasboard/index'
+    //  ];
+
+    //     return view ('admin.layouts.wrapper', $data);
+    // });
 
     
     // Route::get('/pesan', [AdminPesan::class, 'index']);

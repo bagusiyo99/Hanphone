@@ -23,7 +23,7 @@ class AdminPesan extends Controller
         return view ('admin.layouts.wrapper', $data );
     }
 
-            public function show ($id)
+    public function show ($id)
     {
     $data = [
         'pesan' => Pesan::find($id),

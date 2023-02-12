@@ -25,7 +25,8 @@
 
                             <td>
                                 <div class="text-center mb-1">
-                                    <a href="/admin/infinix/{{ $item->id }}/edit " class="btn btn-success">Edit</a>
+                                    <a href="/admin/infinix/{{ $item->id }}/edit "
+                                        class="btn btn-success  mb-2">Edit</a>
 
                                     <form action="/admin/infinix/{{ $item->id }}" method="POST">
                                         @method ('delete')

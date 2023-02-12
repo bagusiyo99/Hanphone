@@ -116,6 +116,10 @@
                         <a class="nav-link " href="/contact">Contact</a>
                     </li>
                 </ul>
+                {{-- <form class="d-flex">
+                    <a href="/login" class="btn btn-primary"><i class="fas fa-user"></i> dasboard</a>
+                    {{-- <a href="/admin/dasboard" class="btn btn-primary"><i class="fas fa-user"></i> dasboard</a> --}}
+                {{-- </form> --}}
             </div>
         </div>
     </nav>
