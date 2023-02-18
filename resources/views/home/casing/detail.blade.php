@@ -9,7 +9,7 @@
 
 <div class="main">
     <h3 class="heading">{{ $casing->judul }}</h3>
-    <p>{{ $casing->created_at }}</p>
+    <p>{{ $casing->created_at->format('d-F-Y ') }}</p>
 
 
     <div class="detail-tentang">

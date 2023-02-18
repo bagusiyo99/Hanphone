@@ -15,7 +15,7 @@
         @foreach ($banner as $key => $item)
             <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                 <img src="/{{ $item->gambar }}" class="img-carousel" alt="">
-                <div class="carousel-caption d-none d-md-block text-success">
+                <div class="carousel-caption d-none d-md-block text-white">
                     <h5>{{ $item->judul }}</h5>
                     <p>{{ $item->deskripsi }}</p>
                 </div>
@@ -35,21 +35,17 @@
     </button>
 </div>
 
-{{-- <div class="container my-5">
-    <div class="text-center">
-        <h4> About </h4>
-    </div>
-</div> --}}
+
+
 <div class="main">
     <h3 class="heading">About</h3>
 </div>
-<section class="info mb-2">
+<section class="info " data-aos="fade-right">
     <div class="main-info">
         @foreach ($about as $item)
             <img src="/{{ $item->gambar }}">
             <div class="tulis">
                 <h4>{{ $item->judul }}</h4>
-                {{-- <h1>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1> --}}
                 <p>{{ $item->deskripsi }} </p>
 
             </div>
@@ -59,7 +55,7 @@
 
 <div class="bg-success my-5">
 
-    <div class="container my-5">
+    <div class="container my-5" data-aos="zoom-in">
         <div class="text-center text-white">
             <h4> Pelajari lanjut </h4>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam magnam ducimus quam aliquid
@@ -85,7 +81,7 @@
 </div>
 <div class="atur ">
     @foreach ($promo as $item)
-        <div class="card-jurusan">
+        <div class="card-jurusan" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="4500">
             <div class="card-image">
                 <a href="#">
                     <img src="/{{ $item->gambar }}">
@@ -113,7 +109,7 @@
 <div class="main">
     <h3 class="heading">Informasi</h3>
 </div>
-<main class="container">
+<main class="container" data-aos="fade-left">
 
     <div class="p-3 p-md-4 mb-5 text-white rounded bg-success">
         <div class="col-md-7 px-0">
@@ -123,7 +119,7 @@
         </div>
     </div>
 
-    <div class="row mb-2">
+    <div class="row mb-2" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="4500">
         @foreach ($informasi as $item)
             <div class="col-md-6">
                 <div

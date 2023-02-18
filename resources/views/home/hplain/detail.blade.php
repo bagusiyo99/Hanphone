@@ -9,7 +9,7 @@
 
 <div class="main">
     <h3 class="heading">{{ $hplain->judul }}</h3>
-    <p>{{ $hplain->created_at }}</p>
+    <p>{{ $hplain->created_at->format('d-F-Y ') }}</p>
 
     <div class="detail-tentang">
         <img src="/{{ $hplain->gambar }}" width="500px" height="400px">

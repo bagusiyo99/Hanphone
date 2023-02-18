@@ -9,8 +9,7 @@
 
 <div class="main">
     <h3 class="heading">{{ $usb->judul }}</h3>
-    <p>{{ $usb->created_at }}</p>
-    <p>{{ $usb->created_at }}</p>
+    <p>{{ $usb->created_at->format('d-F-Y ') }}</p>
 
 
     <div class="detail-tentang">

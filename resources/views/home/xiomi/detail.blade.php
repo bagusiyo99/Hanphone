@@ -9,7 +9,7 @@
 
 <div class="main">
     <h3 class="heading">{{ $xiomi->judul }}</h3>
-    <p>{{ $xiomi->created_at }}</p>
+    <p>{{ $xiomi->created_at->format('d-F-Y ') }}</p>
 
     <div class="detail-tentang">
         <img src="/{{ $xiomi->gambar }}" width="500px" height="400px">

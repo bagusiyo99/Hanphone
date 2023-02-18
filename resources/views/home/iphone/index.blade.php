@@ -5,7 +5,7 @@
 
     <section class="blog">
         @foreach ($iphone as $item)
-            <div class="blog-box mt-5">
+            <div class="blog-box mt-5" data-aos="zoom-out">
                 <div class="blog-img">
                     <img src="/{{ $item->gambar }}">
                 </div>
