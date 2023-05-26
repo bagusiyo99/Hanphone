@@ -2,13 +2,13 @@
 
 
     <h2>Selamat Datang</h2>
-    <p> Sejarah SMKN Bagus Bandar Lampung</p>
+    <p> Sejarah Toko</p>
 
 
 </section>
 
 <div class="main">
-    <h3 class="heading">Tentang Sekolah</h3>
+    <h3 class="heading">Tentang Toko</h3>
 
     <div class="detail-tentang">
         <img src="/img/welcome.jpg" width="500px" height="400px">

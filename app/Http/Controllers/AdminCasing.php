@@ -110,7 +110,7 @@ class AdminCasing extends Controller
     public function update(Request $request, $id)
     {   
         $casing = Casing::find($id);
-         $data = $request -> validate ([
+        $data = $request -> validate ([
             'judul' => 'required',
             'deskripsi' => 'required ',
             'harga' => 'required ',
