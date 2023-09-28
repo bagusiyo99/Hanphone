@@ -10,4 +10,3 @@ installasi:
 - Ketikkan perintah: php artisan migrate:fresh --seed
 - Ketikkan perintah: php artisan serve
 - npm install dan npm run dev
-- selamat mencoba
